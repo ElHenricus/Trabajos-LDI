@@ -1,0 +1,15 @@
+; Cargar los valores iniciales
+mva #2     ; Ra = valor1 (2)
+mvb #3     ; Rb = valor2 (3)
+
+clr Rc     ; Limpiar Rc (resultado = 0)
+
+.loop:
+    add Rc  ; Rc = Rc + Ra (sumamos valor1 al resultado)
+    dec Rb  ; Restamos 1 al contador (Rb)
+    jnz .loop ; Si Rb no es cero, continuar
+
+; Resultado en Rc
+mvd Rc     ; Opcional: Mostrar resultado en el display (en Rd)
+
+hlt        ; Fin del programa
